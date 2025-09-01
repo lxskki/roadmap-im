@@ -1,0 +1,804 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #5cb85c;
+    --accent-color: #4a90e2;
+    --text-color: #333741;
+    --text-light: #6c757d;
+    --background-color: #f7f8fa;
+    --card-background: #ffffff;
+    --border-color: #e8eaf0;
+    --success-bg: #e9f7ef;
+    --success-text: #1d6a43;
+    --warning-bg: #fff8e1;
+    --warning-text: #8a6d3b;
+    --danger-bg: #fbe9e7;
+    --danger-text: #c9302c;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    text-transform: uppercase;
+}
+
+body.dark-theme {
+    --background-color: #1E1E1E;
+    --card-background: #2A2A2A;
+    --border-color: #404040;
+    --text-color: #E0E0E0;
+    --text-light: #A0A0A0;
+    --primary-color: #FF8C00;
+}
+
+/* ===============================
+   HEADER & LAYOUT
+   =============================== */
+.header {
+    background-color: var(--card-background);
+    color: var(--primary-color);
+    padding: 2.7rem 2.4rem; 
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-content {
+    display: flex;              
+    align-items: center;        
+    justify-content: flex-start;
+    position: relative;         
+    width: 100%;
+}
+
+.header-logo-left {
+    height: 40px;              
+    display: block;            
+}
+
+.header-title-center {
+    margin-left: auto;          
+    margin-right: auto;        
+    text-align: center;         
+    position: absolute;         
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-title-center .header-title {
+    margin-top: 5px !important;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin: 0;
+    color: var(--primary-color);
+    white-space: nowrap; 
+}
+
+.header-title-center .header-subtitle {
+    margin-top: 10px !important;                  
+    font-size: 1.3rem !important;                
+    font-weight: 400 !important;                 
+    color: var(--text-light) !important;         
+    letter-spacing: 0.5px;            
+    text-transform: none;             
+    margin-bottom: 0;
+}
+
+#theme-switcher-container {
+    position: absolute;
+    right: 2.2rem;
+}
+
+#theme-switcher-button {
+    background: var(--border-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    color: var(--text-color);
+}
+
+#theme-switcher-button:hover {
+    transform: scale(1.1);
+}
+
+.header-title-center .header-subtitle {
+    margin-top: 3px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.page-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.breadcrumb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb {
+    margin-bottom: 0; 
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.page-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 500;
+}
+
+.section-title {
+    margin: 2.5rem 0 1.5rem 0;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* ===============================
+   CARDS (Projeto e Épico)
+   =============================== */
+.card {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-title {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.card-body {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.card-footer {
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    text-align: right;
+}
+
+.header-home-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-secondary {
+    background-color: #f0f2f5;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+    background-color: #e4e6eb;
+}
+
+
+/* ===============================
+   COMPONENTES ESPECÍFICOS
+   =============================== */
+
+.status-badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    background-color: #e9ecef; 
+    color: #495057 !important;
+}
+
+.status-badge.status-done, .status-badge.status-closed { background-color: var(--success-bg); color: var(--success-text); }
+.status-badge.status-in-progress, .status-badge.status-doing { background-color: var(--warning-bg); color: var(--warning-text); }
+.status-badge.status-to-do, .status-badge.status-new { background-color: var(--danger-bg); color: var(--danger-text); }
+.status-badge.status-não-definido { background-color: #e0e0e0; color: #333; }
+
+.card.project-card-full {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card.project-card-full:hover {
+    transform: scale(1.01);
+}
+
+.project-card-full .card-title {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.project-card-full .card-responsible {
+    color: #FFFFFF;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+.card-footer-alt {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.metric-badge {
+    background-color: transparent;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.card.epic-card-list {
+    padding: 1.5rem;
+}
+
+.card.epic-card-list .card-title-small {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card.epic-card-list .epic-responsible {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.card.epic-card-list .card-body {
+    padding-bottom: 1rem;
+}
+
+/* ================================== */
+/* === ESTILOS PARA PÁGINA DE ÁREAS === */
+/* ================================== */
+
+.areas-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; 
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.area-card {
+    background-color: var(--card-background);
+    border-radius: 14px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06); 
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    padding: 1.4rem 1.8rem; 
+    display: flex;
+    align-items: center;
+    gap: 1.7rem; 
+    border-left: 8px solid; 
+}
+
+.area-card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.area-photo {
+    width: 64px;  
+    height: 64px; 
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.area-image {
+    width: 70px; 
+    height: 70px;
+    border-radius: 12px; 
+    object-fit: contain;   
+    flex-shrink: 0;
+}
+
+.task-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.area-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.area-card-title {
+    margin: 0;
+    font-size: 1.2rem; 
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.area-card-badge {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-light);
+    padding: 0.5rem 0.9rem; 
+    border-radius: 16px;
+    font-size: 0.85rem; 
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.projects-container-expandable {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.epics-wrapper {
+    padding: 0 0 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-left: 3px solid #e0e0e0;
+    margin-left: 1.5rem;
+    margin-top: -10px;
+    padding-top: 20px;
+}
+
+.no-projects-message {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 1.5rem;
+}
+
+.btn-features {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #f0f0f0;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.btn-features:hover {
+    background-color: #e0e0e0;
+}
+
+/* ================================================
+   ESTILOS ATUALIZADOS PARA LISTA DE FEATURES
+   ================================================ */
+
+.features-header-row {
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-color);
+    margin: 0 8px; 
+}
+
+.feature-container {
+    margin-bottom: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.feature-row-expandable {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;
+}
+
+.feature-row-expandable:hover {
+    filter: brightness(1.05);
+}
+
+.header-cell,
+.feature-cell {
+    font-size: 0.9rem;
+    padding: 0 8px; 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.header-cell.title,        .feature-cell.title        { flex: 4; justify-content: flex-start; font-weight: 500;}
+.header-cell.responsible,  .feature-cell.responsible  { flex: 2.5; justify-content: flex-start; opacity: 0.9;}
+.header-cell.start-date,   .feature-cell.start-date   { flex: 1.5; justify-content: center; }
+.header-cell.target-date,  .feature-cell.target-date  { flex: 1.5; justify-content: center; }
+.header-cell.effort,       .feature-cell.effort       { flex: 1; justify-content: center; }
+.header-cell.business-value, .feature-cell.business-value { flex: 1; justify-content: center; }
+.header-cell.state,        .feature-cell.state        { flex: 1.5; justify-content: center; }
+.header-cell.progress,     .feature-cell.progress     { flex: 2; justify-content: center; gap: 10px; }
+.header-cell.expand-icon-container, .feature-cell.expand-icon-container { flex: 0.5; justify-content: flex-end; font-size: 1.2rem; }
+
+.progress-bar-inline {
+    height: 8px;
+    width: 100px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill-inline {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.tasks-wrapper-expandable {
+    padding: 0;
+    background-color: #fff;
+}
+
+.no-tasks-message {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ==========================================================
+   ESTILOS ATUALIZADOS PARA O CARD DE ÉPICO (MAIS COMPACTO)
+   ========================================================== */
+
+.epic-card-list-compact {
+    padding: 0.8rem 1rem; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.epic-card-list-compact .card-body {
+    padding: 0; 
+}
+
+.epic-card-list-compact .card-header {
+    margin-bottom: 0.8rem; 
+    padding: 0;
+}
+
+.epic-card-list-compact .card-title-small {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.epic-card-footer-aligned {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.epic-card-list-compact .epic-responsible {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin: 0; 
+}
+
+.btn-epic-features {
+    padding: 0.5rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: filter 0.2s ease-in-out;
+
+    color: #FFFFFF;
+    border: 1.5px solid rgba(255, 255, 255, 0.8); 
+}
+
+.btn-epic-features:hover {
+    filter: brightness(1.1); 
+}
+
+.epic-card-list-compact .status-badge {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+}
+
+.btn-voltar-dinamico {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: filter 0.2s ease-in-out;
+    
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF; 
+}
+
+.btn-voltar-dinamico:hover {
+    filter: brightness(1.15);
+}
+
+/* ===============================================
+   ESTILOS PARA LINHA DE TAREFA (HORIZONTAL)
+   =============================================== */
+
+.tasks-list-colored {
+    padding: 10px;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    gap: 1rem; 
+}
+.task-row:last-child {
+    margin-bottom: 0;
+}
+
+.task-photo-placeholder {
+    width: 32px;
+    height: 32px;
+    background-color: #e0e0e0; 
+    border-radius: 50%;       
+    flex-shrink: 0;           
+}
+
+.task-cell {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.task-cell.title {
+    flex: 5; 
+    font-weight: 500;
+}
+.task-cell.responsible {
+    flex: 3;
+    color: var(--text-light);
+}
+.task-cell.date {
+    flex: 1.5;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.task-row .status-badge {
+    margin-left: auto; 
+    flex-shrink: 0;
+}
+
+
+/* ===============================
+   PROGRESSO GERAL
+   =============================== */
+
+.geral-progress-container {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+}
+
+.geral-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem; 
+}
+
+.geral-progress-title {
+    margin: 0;
+    font-size: 1rem; 
+    font-weight: 500;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.geral-progress-text {
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #FF8C00;
+}
+
+.geral-progress-bar {
+    height: 12px; 
+    width: 100%;
+    background-color: #e9ecef; 
+    border-radius: 6px; 
+    overflow: hidden; 
+}
+
+.geral-progress-fill {
+    height: 100%;
+    background-color: #FF8C00; 
+    border-radius: 6px; 
+    transition: width 0.5s ease-in-out; 
+}
+
+/* =========================================
+   AJUSTES FINOS PARA O TEMA ESCURO
+   ========================================= */
+
+body.dark-theme .breadcrumb a {
+    color: var(--text-color); 
+}
+
+body.dark-theme .breadcrumb {
+    color: var(--text-light); 
+}
+
+
+body.dark-theme .tasks-wrapper-expandable {
+    background-color: var(--background-color); 
+}
+
+body.dark-theme .task-cell {
+    color: #333741;
+}
+
+body.dark-theme .task-cell.responsible,
+body.dark-theme .task-cell.date {
+    color: #6c757d;
+}
+
+body.dark-theme .tasks-list-colored {
+    background-color: var(--background-color);
+}
+
+body.dark-theme .epic-card-list-compact .card-title-small {
+    color: #333741;
+}
+body.dark-theme .epic-card-list-compact .epic-responsible {
+    color: #6c757d;
+}
+
+body.dark-theme .btn-epic-features {
+    color: white;
+}
+
+body.dark-theme .epic-card-list-compact .card-title-small {
+    color: #000000 !important; 
+}
+
+/* =========================================
+   LÓGICA DE TROCA DE LOGO PARA TEMA ESCURO
+   ========================================= */
+
+.logo-branca {
+    display: none;
+}
+.logo-padrao {
+    display: block;
+}
+
+body.dark-theme .logo-branca {
+    display: block; 
+}
+body.dark-theme .logo-padrao {
+    display: none;  
+}
+
+/* =========================================
+   LÓGICA DE TROCA DE LOGO PARA TEMA ESCURO 
+   ========================================= */
+
+#logo-container {
+    position: relative; 
+    width: 200px;
+    height: 40px; 
+    margin-right: 1.5rem;
+}
+
+#logo-container .dash-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.header-logo-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    transition: opacity 0.3s ease;
+}
+
+
+.logo-branca {
+    opacity: 0;
+    pointer-events: none; 
+}
+.logo-padrao {
+    opacity: 1;
+}
+
+body.dark-theme .logo-branca {
+    opacity: 1;
+    pointer-events: auto;
+}
+body.dark-theme .logo-padrao {
+    opacity: 0;
+    pointer-events: none;
+}
